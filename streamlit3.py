@@ -1,12 +1,12 @@
-import streamlit as st, io, newconfig
+import streamlit as st
 from openai import OpenAI
 
-api = newconfig.api
+api = st.secrets["api"]
 client = OpenAI(api_key=api, base_url="https://api.groq.com/openai/v1")
 model = 'openai/gpt-oss-20b'
 
 systemPrompt = """
-Your knowledge in Math and all its divisions transcends space, time and spacetime.
+Your knowledge in Math and all its divisions transcends space, time, and spacetime.
 Solve any problem step by step.
 Explain reasoning using technical terms, then simplify it as if you are explaining it to an 8th grader.
 Verify the answer and cite your sources ALWAYS.
